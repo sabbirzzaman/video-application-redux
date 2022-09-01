@@ -35,8 +35,6 @@ export default function VideGrid() {
         ));
     }
 
-    console.log(videos)
-
     return (
         <section className="pt-12">
             <section className="pt-12">
