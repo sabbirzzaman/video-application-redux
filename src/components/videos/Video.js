@@ -28,7 +28,7 @@ export default function Video({ video }) {
                         alt="Learn with Sumit"
                     />
 
-                    <div class="flex flex-col">
+                    <div className="flex flex-col">
                         <Link to={`/videos/${id}`}>
                             <p className="text-slate-900 text-sm font-semibold">
                                 {title}

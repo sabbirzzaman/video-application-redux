@@ -6,7 +6,7 @@ export default function TextInput({ title, ...attributes }) {
             </label>
             <input
                 type="text"
-                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full p-2 text-xl sm:text-sm border border-gray-300 rounded-md"
                 {...attributes}
             />
         </>
