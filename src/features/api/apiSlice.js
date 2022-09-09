@@ -5,5 +5,22 @@ export const apiSlice = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: 'http://localhost:9000',
     }),
-    endpoints: (builder) => ({}),
+    endpoints: (builder) => ({
+        getVideos: builder.query({
+            query: () => '/videos',
+        }),
+        getVideo: builder.query({
+            query: (videoId) => `/videos/${videoId}`
+        }),
+        getRelatedVideos: builder.query({
+            query: ({id, title}) => {
+                const relatedWords = title.split(' ');
+                const queryString = relatedWords.map(word => `title_like=${word}`).join('&');
+
+                return `/videos?${queryString}&_limit=5&id_ne=${id}`
+            }
+        })
+    }),
 });
+
+export const { useGetVideosQuery, useGetVideoQuery, useGetRelatedVideosQuery } = apiSlice;
